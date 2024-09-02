@@ -1,0 +1,91 @@
+.App {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.App .Container {
+  background-color: var(--colour__white);
+  padding: var(--padding_l);
+  border-radius: var(--border__rad24);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap_l);
+}
+.App .Container .Details {
+  padding: var(--padding_l);
+}
+.App .Container .Details .Title {
+  font-size: var(--font__size_l);
+  margin-bottom: var(--mg_l);
+}
+.App .Container .Details ul {
+  margin: calc(var(--mg_l) * 2) 0px;
+}
+.App .Container .Details ul li {
+  margin: var(--mg_l) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--gap_md);
+}
+.App .Container .Details .Input__Section .Label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--mg_sm);
+}
+.App .Container .Details .Input__Section .Label label {
+  font-size: var(--font__size_sm);
+}
+.App .Container .Details .Input__Section .Label .error {
+  color: red;
+  font-size: var(--font__size_sm);
+}
+.App .Container .Image svg {
+  width: 50px;
+}
+.App .Container .Image .Mobile {
+  display: none;
+}
+.App .Container.Small {
+  padding: calc(var(--padding_l) * 2);
+  flex-direction: column;
+}
+.App .Container.Small .HeaderImage {
+  width: 100%;
+}
+.App .Container.Small .HeaderImage svg {
+  width: 60px;
+  height: 60px;
+}
+.App .Container.Small .HeaderImage .Header_Text {
+  margin-top: var(--mg_l);
+  font-size: var(--font__size_l);
+}
+.App .Container.Small .Input__Section {
+  width: 100%;
+}
+
+@media screen and (max-width: 860px) {
+  .App .Container {
+    flex-direction: column-reverse;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 0px;
+    height: 100vh;
+  }
+  .App .Container .Details {
+    padding: 0px;
+  }
+  .App .Container .Image .Desktop {
+    display: none;
+  }
+  .App .Container .Image .Mobile {
+    width: 100%;
+    display: flex;
+    border-radius: var(--border__rad8);
+  }
+  .App .Container.Small {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}/*# sourceMappingURL=App.css.map */
