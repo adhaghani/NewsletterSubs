@@ -1,23 +1,19 @@
 import React, { useState } from "react";
 import "./Styles/App.css";
 
-import deskIcon from "./assets/desktop.svg";
-import mobileIcon from "./assets/mobile.svg";
+import deskIcon from "/assets/desktop.svg";
+import mobileIcon from "/assets/mobile.svg";
 import { IconList } from "./assets/Icons";
 import isValidEmail from "./functions/useIsValidEmail";
 import { motion } from "framer-motion";
-import load from "/load.gif";
+
 function App() {
   const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const [isSubmmitted, setIsSubmmitted] = useState(false);
-
-  let timeoutId;
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
-    clearTimeout(timeoutId);
     setEmail(inputValue);
   };
 
@@ -29,10 +25,6 @@ function App() {
     } else {
       setIsError(false);
       setIsSubmmitted(true);
-      setIsLoading(true);
-      timeoutId = setTimeout(() => {
-        setIsLoading(false);
-      }, 800);
     }
   };
 
@@ -47,10 +39,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <div className="Loading">
-        <img src={load} alt="loading" />
-      </div> */}
-
       <motion.div
         className="Container"
         initial={{ opacity: 0 }}
